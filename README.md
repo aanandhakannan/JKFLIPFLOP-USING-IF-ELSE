@@ -1,5 +1,9 @@
 # JKFLIPFLOP-USING-IF-ELSE
 
+NAME : AANANDHA KANNAN . S
+
+REF NO : 24900501
+
 **AIM:** 
 
 To implement  JK flipflop using verilog and validating their functionality using their functional tables
@@ -34,15 +38,102 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
+1. Type the program in Quartus software.
+
+2. Compile and run the program.
+
+3. Generate the RTL schematic and save the logic diagram.
+
+4. Create nodes for inputs and outputs to generate the timing diagram.
+
+5. For different input combinations generate the timing diagram.
+
 /* write all the steps invloved */
 
 **PROGRAM**
+
+module jk_flip_flop(q, qb,j,k,clock,reset);
+  
+    input j,k,clock,reset;
+    
+    output reg q, qb;
+	 
+
+always @ (posedge (clock))
+
+   
+    begin 
+    
+        if (!reset)
+        
+            begin
+            
+               q <= q;
+               
+               qb <=qb;
+           
+            end
+            
+        
+else
+ //Write logic for JK flipflop using if else statement for four conditions
+
+begin
+ 
+               if (j == 0 && k == 0)
+               
+                    begin
+                    
+                    q <= q;
+                    
+                    qb <= qb;
+                    
+                    end 
+		
+  else if (j != k)
+  
+                    begin
+  
+                    q <= j;
+                    
+                    qb <= k;
+                    
+                    end
+               else 
+   if (j == 1 && k == 1) 
+   
+                    begin 
+                    
+                    q <= ~q; 
+                    
+                    qb <= ~qb; 
+                    
+                    end 
+            
+            end
+
+end  
+
+endmodule
+
 
 /* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
 */
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+
+
+![Screenshot 2024-12-19 224109](https://github.com/user-attachments/assets/a8aa3413-b3ac-47d0-a2b3-c8f860b7a5f1)
+
+
+
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+
+
+![Screenshot 2024-12-19 224122](https://github.com/user-attachments/assets/f06c7745-0e3c-4dc7-9e53-3a6449cc821d)
+
 **RESULTS**
+
+Thus JK  using venilog is implemented and verified their functionality using their functional gates
